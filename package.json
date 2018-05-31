@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "respository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/jacklooi/shortener.git"
   },
