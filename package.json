@@ -1,0 +1,21 @@
+{
+  "name": "shortener",
+  "version": "1.0.0",
+  "description": "Shortener service",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/jacklooi/shortener.git"
+  },
+  "author": "Jack",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "body-parser": "^1.18.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3"
+  }
+}
