@@ -1,6 +1,43 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>URL Shortener</title>
+        <meta name="description" content="URL Shortener for UrbanFox Test" />
+        <meta name="keyword" content="url, shortener, urbanfox, test, demo" />
+        <meta name="author" content="Jack Looi" />
+        <link rel="icon" href="favicon.ico" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    </head>
     <body>
-        <h1>This is HTML</h1>
+        <section class="hero is-primary is-bold">
+            <div class="hero-body">
+                <div class="container">
+                        <h1 class="title">URL Shortener</h1>
+                        <p class="subtitle">
+                            Simple way to shorten your <strong>URL</strong>!
+                        </p>
+                        <div class="columns">
+                            <div class="column">
+                                <input class="input is-rounded" type="text" placeholder="Your Original URL Here">
+                            </div>
+                            <div class="column">
+                                <a class="button is-primary is-inverted is-outlined">Shorten!</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                    <div id="shorten-list"></div>
+            </div>
+        </section>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>
