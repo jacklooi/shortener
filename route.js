@@ -16,18 +16,23 @@ router.use(function timeLog (req, res, next) {
 
 // GET /
 router.get('/', function(req, res) {
-    res.send('Hello World');
+    core.geturllist(req, function(err, respond) {
+        if (err) return next(err);
+        return res.send(respond);
+    });
 });
 
-// GET /{id}
+// GET /{id} for page redirect
 router.get('/:id', function (req, res) {
-    var id = req.params.id;
-    res.send('Hey ' + id);
+    core.getfullurl(req, function(err, respond) {
+        if (err) return next(err);
+        return res.send(respond);
+    });
 });
 
 // POST /shorten
 router.post('/shorten', function (req, res) {
-    core.shorten(req, function(err, respond){
+    core.shortenurl(req, function(err, respond) {
         if (err) return next(err);
         return res.send(respond);
     });
