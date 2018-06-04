@@ -16,7 +16,6 @@ var getfullurl = function (req, callback) {
     var shorturl = req.protocol + '://' + req.get('host') + '/' + req.params.id;
     var Url = UrlModel.Url;
     Url.findOne({ shorturl: shorturl }, function(err, data) {
-        var json = '';
         if (data) {
             data.clickcnt++;
             data.lastused = Date.now();
@@ -25,13 +24,9 @@ var getfullurl = function (req, callback) {
                 console.log('counter updated');
                 if (err) console.error(err);
             });
-
-            json = prettifyJSON( { url: data.url } );
+            return callback(null, data.url);
         }
-        else
-            json = prettifyJSON(data);
-        
-        return callback(null, json);
+        return callback(null, req.protocol + '://' + req.get('host') + '/error/404');
     });
 };
 
@@ -58,6 +53,12 @@ var shortenurl = function (req, callback) {
     return callback(null, json);
 };
 
+var notfound = function (req, callback) {
+    let json = prettifyJSON( { message: 'short url is invalid' } );
+
+    return callback(null, json);
+}
+
 // Common functions
 var prettifyJSON = function (json) {
     return JSON.stringify(json, null, 4);
@@ -75,3 +76,4 @@ var generateId = function(length) {
 exports.geturllist = geturllist;
 exports.getfullurl = getfullurl;
 exports.shortenurl = shortenurl;
+exports.notfound = notfound;

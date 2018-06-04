@@ -26,6 +26,14 @@ router.get('/', function(req, res) {
 router.get('/:id', function (req, res) {
     core.getfullurl(req, function(err, respond) {
         if (err) return next(err);
+        return res.redirect(respond);
+    });
+});
+
+// GET /{id} for page redirect
+router.get('/error/404', function (req, res) {
+    core.notfound(req, function(err, respond) {
+        if (err) return next(err);
         return res.send(respond);
     });
 });

@@ -16,18 +16,19 @@
         <section class="hero is-primary is-bold">
             <div class="hero-body">
                 <div class="container">
-                        <h1 class="title">URL Shortener</h1>
-                        <p class="subtitle">
-                            Simple way to shorten your <strong>URL</strong>!
-                        </p>
-                        <div class="columns">
-                            <div class="column">
-                                <input class="input is-rounded" type="text" placeholder="Your Original URL Here">
-                            </div>
-                            <div class="column">
-                                <a class="button is-primary is-inverted is-outlined">Shorten!</a>
-                            </div>
+                    <h1 class="title">URL Shortener</h1>
+                    <p class="subtitle">
+                        Simple way to shorten your <strong>URL</strong>!
+                    </p>
+                    <div class="columns">
+                        <div class="column is-half">
+                            <input class="input is-rounded" type="text" id="original-url" placeholder="Your Original URL Here">
                         </div>
+                        <div class="column">
+                            <a class="button is-primary is-inverted is-outlined" id="shorten-url">Shorten!</a>
+                        </div>
+                    </div>
+                    <p class="help" id="error-text"></p>
                 </div>
             </div>
         </section>
