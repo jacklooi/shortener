@@ -16,6 +16,11 @@ router.use(function timeLog (req, res, next) {
 
 // GET /
 router.get('/', function(req, res) {
+	return res.render('./public/index.html');
+});
+
+// GET /list
+router.get('/list', function(req, res) {
     core.geturllist(req, function(err, respond) {
         if (err) return next(err);
         return res.send(respond);
@@ -30,7 +35,7 @@ router.get('/:id', function (req, res) {
     });
 });
 
-// GET /{id} for page redirect
+// GET /error/404
 router.get('/error/404', function (req, res) {
     core.notfound(req, function(err, respond) {
         if (err) return next(err);
