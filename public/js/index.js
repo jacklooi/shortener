@@ -3,22 +3,27 @@ $(document).ready(function() {
 });
 
 $('#shorten-url').click(function () {
+    var shortenbtn = $('#shorten-url');
     var originalurl = $('#original-url');
+    shortenbtn.attr('disabled','disabled');
     if (!originalurl.val())
     { 
-        $('#error-text').append('* please enter your URL');
+        $('#error-text').html('* please enter your URL');
+        shortenbtn.removeAttr('disabled','disabled');
         return;
     }
     
     if(originalurl.val().substring(0, 3) == 'www')
     { 
-        $('#error-text').append('* please enter http:// or https://');
+        $('#error-text').html('* please enter http:// or https://');
+        shortenbtn.removeAttr('disabled','disabled');
         return;
     }
 
     if (!checkURL(originalurl.val()))
     { 
-        $('#error-text').append('* invalid URL');
+        $('#error-text').html('* invalid URL');
+        shortenbtn.removeAttr('disabled','disabled');
         return;
     }
 
@@ -34,9 +39,9 @@ $('#shorten-url').click(function () {
         dataType:"text"
     });
     $.when(promise).then(function(json){
-        $("#response").html("<p>" + JSON.stringify(json) + "</p><br />Check your console for the object.<br />")
         loaddiv();
         $("#original-url").val("");
+        shortenbtn.removeAttr('disabled','disabled');
     });
 });
 
