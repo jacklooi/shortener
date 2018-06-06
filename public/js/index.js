@@ -39,10 +39,17 @@ $('#shorten-url').click(function () {
         dataType:"text"
     });
     $.when(promise).then(function(json){
-        loaddiv();
-        $("#original-url").val("");
+        $('#error-text').html('');
+        $("#original-url").val('');
         shortenbtn.removeAttr('disabled','disabled');
+        loaddiv();
     });
+});
+
+$('#original-url').keyup(function(e){
+    if (e.keyCode === 13) {
+        $('#shorten-url').click();
+    }
 });
 
 var loaddiv = function() {
