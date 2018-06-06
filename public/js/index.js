@@ -28,7 +28,7 @@ $('#shorten-url').click(function () {
 
     var promise = $.ajax({
         type:"POST",
-        url: "http://localhost:4555/shorten",
+        url: "/shorten",
         data: data,
         contentType:"application/json; charset=utf-8",
         dataType:"text"
@@ -42,7 +42,7 @@ $('#shorten-url').click(function () {
 
 var loaddiv = function() {
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://localhost:4555', true);
+    request.open('GET', "/list", true);
     request.onload = function() {
         $('#shorten-list').empty();
         var data = JSON.parse(this.responseText);
