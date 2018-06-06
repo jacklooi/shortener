@@ -8,9 +8,10 @@
         <meta name="keyword" content="url, shortener, urbanfox, test, demo" />
         <meta name="author" content="Jack Looi" />
         <link rel="icon" href="favicon.ico" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
     </head>
     <body>
         <section class="hero is-primary is-bold">
@@ -34,9 +35,16 @@
         </section>
         <section class="section">
             <div class="container">
-                    <div id="shorten-list"></div>
+                    <div id="shorten-list" class="table__wrapper"></div>
             </div>
         </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p>&copy; 2018 Jack Looi. | Crafted for UrbanFox Test</p>
+                </div>
+            </div> 
+        </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src="js/moment.min.js"></script>
         <script src="js/index.js"></script>
